@@ -46,7 +46,7 @@ class CvclEvalModel(EvalModel):
                 text_features = self.model.encode_text(texts, texts_len)
                 all_feats.append(text_features.cpu())
 
-        return np.concatenate(all_feats, dim=0)
+        return np.concatenate(all_feats, axis=0)
 
     def get_all_sim_scores(self, dataloader):
         """

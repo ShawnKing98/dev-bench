@@ -1,6 +1,7 @@
 import data_handling
 import numpy as np
 import argparse
+import sys
 
 parser = argparse.ArgumentParser(description='Evaluate a model on DevBench tasks.')
 parser.add_argument('model', type=str, help='model type')
@@ -71,6 +72,7 @@ elif model_type == "vilt":
     )
 
 elif model_type == "cvcl":
+    sys.path.append('/projectnb/ivc-ml/wsashawn/multimodal-baby')
     from model_classes.cvcl import CvclEvalModel
     from multimodal.multimodal_lit import MultiModalLitModel
 

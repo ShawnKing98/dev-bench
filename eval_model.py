@@ -77,7 +77,7 @@ class EvalModel():
         return np.stack(all_sims, axis=0)
 
 class GenEvalModel():
-    def __init__(self, model, processor=None, device=torch.device("cuda" if torch.cuda.is_available() else "cpu"))):
+    def __init__(self, model, processor=None, device=torch.device("cuda" if torch.cuda.is_available() else "cpu")):
         self.device = device
         self.model = model.to(self.device)
         self.processor = processor
